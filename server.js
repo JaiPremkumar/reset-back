@@ -17,12 +17,16 @@ app.use('/api/v1/',auth)
 
 dotenv.config({path:path.join(__dirname,'config.env')}) 
 connectDb()
-app.use(cors({
-    origin:'http://localhost:3000',
-    methods:['POST','GET','PUT','DELET']
-}));
+app.use(cors());
 
-
-app.listen(process.env.PORT,()=>{
-    console.log(`port listen in :${process.env.PORT}`)
-})
+app.listen(process.env.PORT, async () => {
+    try {
+      await connectDb;
+      console.log(
+        `Server listening to the port: ${process.env.PORT} in ${process.env.NODE_ENV}`
+      );
+    } catch (err) {
+      console.log(err);
+    }
+  });
+  

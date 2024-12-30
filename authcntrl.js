@@ -143,7 +143,7 @@ exports.forgot =async(req,res,next)=>{
         from:  `${process.env.SMTP_FROM_NAME} <${process.env.SMTP_FROM_EMAIL}>`, 
         to:email,
         subject:"Password reset Request",
-        text:`Click the URL: http://localhost:3000/reset/${token}`,
+        text:`Click the URL: https://reset-front.vercel.app/reset/${token}`,
 
     }
     await transporter.sendMail(receiver)
