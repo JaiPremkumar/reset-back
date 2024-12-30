@@ -16,7 +16,7 @@ const auth = require('./router');
 app.use('/api/v1/',auth)
 
 dotenv.config({path:path.join(__dirname,'config.env')}) 
-connectDb()
+
 app.use(cors());
 
 app.listen(process.env.PORT, async () => {
