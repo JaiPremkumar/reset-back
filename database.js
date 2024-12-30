@@ -13,6 +13,5 @@ const connectDb = mongoose
     console.log(err); 
   });
 
-module.exports = connectDatabase;
 
 module.exports = connectDb;
